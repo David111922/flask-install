@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Facts</h1>
+        <div class="facts-list">
+            {% for fact in facts %}
+                <div class="fact">
+                    <h2>{{ fact.title }}</h2>
+                    <p>{{ fact.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/facts/new">Submit a new fact</a>
+    </div>
+</body>
+</html>
